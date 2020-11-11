@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  inventory-engine:
+    image: inventory:latest
+    build:
+      context: inventory/
+      dockerfile: Dockerfile
+    container_name: inventory
+    ports:
+      - '49160:3001'
+    networks:
+      - adi_network
+    command: sh -c './wait-for-it.sh inventory-db:3306 --timeout=60 -- npm start'
+    depends_on:
+      - inventory-db
+
+  inventory-db:
+    image: mysql
+    container_name: inventory-db
+    ports:
+      - '3306:3306'
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: inventory
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testpassword
+    networks:
+      - adi_network
+    healthcheck:
+      test: mysqladmin ping -uroot -ppassword --silent || exit 1
+      interval: 10s
+      timeout: 10s
+      retries: 10
+      
+  pricing-engine:
+    image: adichallenge/adichallenge:product-engine
+    container_name: pricing
+    ports:
+      - '3000:3000'
+    networks:
+      - adi_network
+      
+networks:
+  adi_network:

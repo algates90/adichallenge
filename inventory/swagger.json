@@ -1,0 +1,32 @@
+{
+  "definition": {
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Inventory Engine",
+      "version": "0.1.0",
+      "description":
+      "This is a product inventory application made with Express and documented with Swagger",
+      "license": {
+        "name": "MIT",
+        "url": "https://spdx.org/licenses/MIT.html"
+      },
+      "contact": {
+        "name": "Alagappan Arumugam",
+        "url": "",
+        "email": "algates90@gmail.com"
+      }
+    },
+    "tags": [
+      {
+        "name": "Products",
+        "description": "API for retrieving and consuming Products"
+      }
+    ],
+    "servers": [
+      {
+        "url": "http://localhost:49160"
+      }
+    ]
+  },
+  "apis": ["./routes/api/api.js"]
+}
