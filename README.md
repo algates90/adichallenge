@@ -1,1 +1,35 @@
-# adichallenge
+# adichallenge/productinventory
+
+This is simple project involving a product inventory that includes querying and consumption.
+
+## Installation
+
+Clone the repository and run the docker compose commands below.
+
+```bash
+docker-compose -f docker-compose-dev.yml build --no-cache
+docker-compose -f docker-compose-dev.yml up -d --remove-orphans
+```
+
+## Usage
+
+Application can be accessed from the following URL
+```
+http://localhost:49160/
+```
+
+It also allows API mode of dicussion for every need.
+```
+http://localhost:49160/api
+```
+## Built With
+This is a Node JS application built based on ExpressJS with MySQL backend
+
+## Documentation
+API Documentation can be obtained from the following URL
+```
+http://localhost:49160/api-docs/
+```
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
