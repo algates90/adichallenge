@@ -1,6 +1,6 @@
 # adichallenge/productinventory
 
-This is simple project involving a product inventory that includes querying and consumption.
+This is simple project involving a product inventory that includes querying and consumption. Every inquiry is auto confirmed if requested quantity is available, if not, the quantity is adapted and awaits second level confirmation. Every inquiry is valid only for 1 min to be confirmed.
 
 ## Installation
 
