@@ -276,7 +276,7 @@ router.post("/consume", async function (req, res) {
 
         if (data.length>0) {
             // Create inquiry and trigger auto-confirmation if no manual confirmation is required.
-            await db.inquiry.create({validUntil: new Date(Date.now() + (60 * 1000)), isquantityadapted: updateQuantityFlag, isconfirmed: confirmRequest}).then(async function(inquiry) {
+            await db.inquiry.create({validUntil: new Date(Date.now() + (60 * 1000)), isquantityadapted: updateQuantityFlag, isconfirmed: false}).then(async function(inquiry) {
                 for await (const item of data){
                     await db.inquiryproducts.create({productId: item.id, inquiryId: inquiry.id, quantity: item.quantity});
                     if (item.id == data[data.length-1].id) {
