@@ -52,6 +52,8 @@ app.use(
     swaggerUi.setup(specs)
 );
 
+app.use(express.static('public'))
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -67,7 +69,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 
 //Setup database and create base data for product inventory
 db.sequelize.sync({ force: true }).then(() => {

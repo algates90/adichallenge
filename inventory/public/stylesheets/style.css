@@ -9555,3 +9555,61 @@ body.md-skin {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.custom-label {
+  display: inline-block;
+  font-family: 'Open Sans';
+  font-size: 11px;
+  padding-bottom: 1px;
+  padding-left: 6px;
+  padding-right: 6px;
+  text-shadow: none;
+  color: inherit;
+  background-color: white;
+  border-radius: .25em;
+  border: 1px solid;
+}
+.custom-label-transparent {
+  background-color: inherit;
+}
+
+.custom-label-default {
+  border-color: #c2c2c2;
+  color: #c2c2c2;
+}
+.custom-label-primary {
+  border-color: #1ab394;
+  color: #1ab394;
+}
+.custom-label-success {
+  border-color: #1c84c6;
+  color: #1c84c6;
+}
+.custom-label-warning {
+  border-color: #f8ac59;
+  color: #f8ac59;
+}
+.custom-label-warning-light {
+  border-color: #f8ac59;
+  color: #f8ac59;
+}
+.custom-label-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+.custom-label-lightred {
+  border-color: #ed5565;
+  color: #ed5565;
+}
+.custom-label-info {
+  border-color: #23c6c8;
+  color: #23c6c8;
+}
+.custom-label-inverse {
+  border-color: #262626;
+  color: #262626;
+}
+.custom-label-white {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}

@@ -23,7 +23,19 @@ db.products = require("./products.js")(sequelize, Sequelize);
 db.inquiry = require("./inquiry.js")(sequelize, Sequelize);
 db.inquiryproducts = require("./inquiryproducts.js")(sequelize, Sequelize);
 
-db.products.belongsToMany(db.inquiry, { through: db.inquiryproducts });
-db.inquiry.belongsToMany(db.products, { through: db.inquiryproducts });
+db.products.hasMany(db.inquiryproducts, {
+    foreignKey: 'productId',
+});
+db.inquiryproducts.belongsTo(db.products, {
+    foreignKey: 'productId',
+});
+
+db.inquiry.hasMany(db.inquiryproducts, {
+    foreignKey: 'inquiryId',
+});
+db.inquiryproducts.belongsTo(db.inquiry, {
+    foreignKey: 'inquiryId',
+});
+
 
 module.exports = db;

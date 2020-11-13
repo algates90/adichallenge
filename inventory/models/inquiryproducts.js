@@ -1,12 +1,14 @@
 module.exports = (sequelize, Sequelize) => {
     const Inquiryproducts = sequelize.define("inquiryproducts", {
-        id: {
+        quantity: {
             type: Sequelize.INTEGER,
-            primaryKey: true,
-            autoIncrement: true,
             allowNull: false
         },
-        quantity: {
+        inquiryId: {
+            type: Sequelize.INTEGER,
+            allowNull: false
+        },
+        productId: {
             type: Sequelize.INTEGER,
             allowNull: false
         }

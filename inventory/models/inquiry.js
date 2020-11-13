@@ -3,6 +3,16 @@ module.exports = (sequelize, Sequelize) => {
         validUntil: {
             type: Sequelize.DATE,
             allowNull: false
+        },
+        isquantityadapted: {
+            type: Sequelize.BOOLEAN,
+            allowNull: false,
+            defaultValue: false,
+        },
+        isconfirmed: {
+            type: Sequelize.BOOLEAN,
+            allowNull: false,
+            defaultValue: false,
         }
     });
 

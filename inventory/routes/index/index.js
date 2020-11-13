@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
   var data = {
     header: 'Adidas Product Inventory',
     products: [],
-    unableToFetchError: false,
+    error: false,
   };
 
   var acceptLanguage = 'en-us';
@@ -53,7 +53,7 @@ router.get('/', function(req, res) {
             element.price = priceEngineResponse.data.currency+ ' ' +priceEngineResponse.data.price;
             data.products.push(element);
           }).catch(function (error) {
-            data.unableToFetchError = true;
+            data.error = true;
           })
       );
     }
